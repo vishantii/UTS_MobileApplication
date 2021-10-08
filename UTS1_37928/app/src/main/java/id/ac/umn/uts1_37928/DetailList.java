@@ -33,4 +33,12 @@ public class DetailList extends AppCompatActivity {
         btnPlay.setOnClickListener(v -> media.start());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+    
+    @Override
+    protected void onStop(){
+        super.onStop();
+        media.release();
+        media = null;
+    }
+
 }
